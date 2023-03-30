@@ -53,5 +53,21 @@ namespace SeleniumCSharp_BrowserCommands
             // Accept the alert
             driver.SwitchTo().Alert().Accept();
         }
+
+        [Test]
+        public void SwitchToFrames()
+        {
+            // Navigate to the desired page
+            driver.Navigate().GoToUrl("https://codepen.io/fidabrj/pen/NWYeaqG");
+
+            // Switch to frame by name
+            driver.SwitchTo().Frame("result");
+
+            // Switch to the parent frame
+            driver.SwitchTo().ParentFrame();
+
+            // Switch to the first frame or the main document of the web page
+            driver.SwitchTo().DefaultContent();
+        }
     }
 }
